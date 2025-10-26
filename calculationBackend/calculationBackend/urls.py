@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views.calculation_view import health, calculate
+from api.views.calculation_view import calculate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
