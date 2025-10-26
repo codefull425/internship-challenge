@@ -103,13 +103,68 @@ O servidor estará rodando em: **http://localhost:8000**
 
 ---
 
+### 🎨 Instalação e Execução do Frontend
 
+1. **Navegue até a pasta do frontend:**
+```bash
+cd calculationFrontend
+```
+
+2. **Instale as dependências:**
+```bash
+npm install
+```
+
+As dependências incluem:
+- React 19.1.1
+- Formik 2.4.5 (gerenciamento de formulários)
+- Yup 1.3.3 (validação de schemas)
+- Vite 7.1.7 (build tool)
+- Fetch API nativa (requisições HTTP)
+
+3. **Inicie o servidor de desenvolvimento:**
+```bash
+npm run dev
+```
+
+O frontend estará rodando em: **http://localhost:5173**
+
+**Nota:** Certifique-se de que o backend está rodando na porta 8000 antes de usar o frontend.
+
+---
+
+### 🎯 Usando a Aplicação
+
+1. **Inicie o backend** (porta 8000):
+```bash
+cd calculationBackend
+python manage.py runserver 0.0.0.0:8000
+```
+
+2. **Em outro terminal, inicie o frontend** (porta 5173):
+```bash
+cd calculationFrontend
+npm run dev
+```
+
+3. **Acesse no navegador:** http://localhost:5173
+
+4. **Preencha o formulário:**
+   - Digite um número inteiro positivo em **X** (número inicial)
+   - Digite um número inteiro positivo em **Y** (número final, deve ser ≥ X)
+   - Clique em **Calcular MMC**
+
+5. **Veja o resultado:**
+   - O MMC do intervalo será exibido
+   - Mensagens de erro serão mostradas se houver problemas
+
+---
 
 ### 📁 Estrutura do Projeto
 
 ```
 internship-challenge-backend/
-├── calculationBackend/           # Projeto Django
+├── calculationBackend/           # Backend Django
 │   ├── api/                      # App da API
 │   │   ├── services/             # Lógica de negócio
 │   │   │   └── calculation_service.py  # Cálculo do MMC
@@ -120,6 +175,20 @@ internship-challenge-backend/
 │   │   └── urls.py              # Rotas da API
 │   ├── manage.py                # CLI do Django
 │   └── requirements.txt         # Dependências Python
+├── calculationFrontend/          # Frontend React
+│   ├── src/
+│   │   ├── components/          # Componentes React
+│   │   │   ├── MainCard.jsx     # Card principal
+│   │   │   └── CalculationForm.jsx  # Formulário com Formik
+│   │   ├── styles/              # Arquivos CSS
+│   │   │   ├── App.css
+│   │   │   ├── index.css
+│   │   │   ├── MainCard.css
+│   │   │   └── CalculationForm.css
+│   │   ├── App.jsx              # Componente principal
+│   │   └── main.jsx             # Entry point
+│   ├── package.json             # Dependências Node.js
+│   └── vite.config.js           # Configuração do Vite
 └── README.md                    # Este arquivo
 ```
 
