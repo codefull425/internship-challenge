@@ -1,4 +1,5 @@
 import Clock from './Clock';
+import ThemeToggle from './ThemeToggle';
 import '../styles/Header.css';
 
 const Header = () => {
@@ -6,7 +7,10 @@ const Header = () => {
     <header className="header">
       <div className="header-content">
         <h1 className="header-title">Sistema de Cálculo</h1>
-        <Clock />
+        <div className="header-right">
+          <Clock />
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
